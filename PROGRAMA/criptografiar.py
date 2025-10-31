@@ -3,7 +3,6 @@ from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 import base64
 
-
 def ajustar_clave(nombre, key, longitud):
     key_bytes = key.encode('utf-8')
 
@@ -20,8 +19,7 @@ def ajustar_clave(nombre, key, longitud):
 
     print(f"  {nombre} final utilizada (Hex): {key_bytes.hex().upper()}")
     return key_bytes
-
-
+    
 def cifrar_y_descifrar(algoritmo, key, iv, texto):
     data = texto.encode('utf-8')
 
@@ -69,7 +67,7 @@ def main():
         print("Opción no válida.")
         return
 
-    print(f"\n🔑 Has elegido {algoritmo}")
+    print(f"\n Has elegido {algoritmo}")
     print(f"La clave debe tener {key_len} bytes.")
     print(f"El vector de inicialización (IV) debe tener {iv_len} bytes.\n")
 
@@ -90,3 +88,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
